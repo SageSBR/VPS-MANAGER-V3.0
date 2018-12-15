@@ -77,7 +77,7 @@ if [ -f "/usr/sbin/ufw" ] ; then
 fi
 if [ -d "/etc/squid3/" ]
 then
-	wget https://raw.githubusercontent.com/ringhtprince/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/squid1.txt -O /tmp/sqd1
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/squid2.txt -O /tmp/sqd3
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid3/squid.conf
@@ -120,7 +120,7 @@ then
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/openvpn-install.sh -O /bin/openvpn-install
-	chmod +x /bin/openvpnsetup
+	chmod +x /bin/penvpn-install
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/tcptweaker.sh -O /bin/tcptweaker
 	chmod +x /bin/tcptweaker
 	if [ ! -f "/etc/init.d/squid3" ]
@@ -138,11 +138,11 @@ then
 fi
 if [ -d "/etc/squid/" ]
 then
-	wget https://raw.githubusercontent.com/ringhtprince/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/squid1.txt -O /tmp/sqd1
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
-	wget https://raw.githubusercontent.com/ringhtprince/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/squid.txt -O /tmp/sqd3
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/squid.txt -O /tmp/sqd3
 	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid/squid.conf
-	wget https://raw.githubusercontent.com/ringhtprince/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/payload.txt -O /etc/squid/payload.txt
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/payload.txt -O /etc/squid/payload.txt
 	echo " " >> /etc/squid/payload.txt
 	grep -v "^Port 443" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
 	echo "Port 443" >> /etc/ssh/sshd_config
@@ -177,7 +177,7 @@ then
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/openvpn-install.sh -O /bin/openvpn-install
-	chmod +x /bin/openvpnsetup
+	chmod +x /bin/penvpn-install
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/tcptweaker.sh -O /bin/tcptweaker
 	chmod +x /bin/tcptweaker
 	if [ ! -f "/etc/init.d/squid" ]
