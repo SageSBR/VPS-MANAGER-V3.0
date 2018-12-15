@@ -62,7 +62,7 @@ echo -e "\033[1;31m |11|• \033[1;37mBADVPN UDP\033[01;37m"
 echo -e "\033[1;31m |12|• \033[1;37mBACKUP USUARIOS\033[01;37m"
 echo -e "\033[1;31m |13|• \033[1;37mTESTAR VELOCIDAD\033[01;37m"
 echo -e "\033[1;31m |14|• \033[1;37mTCP SPEED\033[01;37m"
-echo -e "\033[1;31m |15|• \033[1;37mOPENVPN TCP\033[01;37m"
+echo -e "\033[1;31m |15|• \033[1;37mOPENVPN TCP/UDP\033[01;37m"
 echo -e "\033[1;34m ===================================\033[0m"
 echo -e "\033[1;35m Opción\033[0m"
 read -p " : " op
