@@ -109,7 +109,7 @@ then
 	chmod +x /bin/sshlimiter
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/scripts/master/vps.sh -O /bin/vps
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/vps -O /bin/vps
 	chmod +x /bin/vps
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
@@ -166,7 +166,7 @@ then
 	chmod +x /bin/sshlimiter
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/scripts/master/vps.sh -O /bin/vps
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/vps -O /bin/vps
 	chmod +x /bin/vps
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
