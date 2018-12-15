@@ -123,7 +123,7 @@ exit
 exit
 ;;
 15)
-/bin/openvpnsetup
+/bin/openvpn-install
 exit
 ;;
 *)
