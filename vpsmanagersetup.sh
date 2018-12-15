@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf $HOME/vpsmanagersetup.sh
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "VPS-MANAGER V3.0" ; tput sgr0
 tput setaf 3 ; tput bold ; echo "" ; echo "Este script irá:" ; echo ""
 echo "● Instalar y configurar el proxy squid en las puertos 80, 3128, 8080 e 8799" ; echo "  para permitir conexiones SSH a este servidor"
@@ -120,7 +121,7 @@ then
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/openvpn-install.sh -O /bin/openvpn-install
-	chmod +x /bin/penvpn-install
+	chmod +x /bin/openvpn-install
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/tcptweaker.sh -O /bin/tcptweaker
 	chmod +x /bin/tcptweaker
 	if [ ! -f "/etc/init.d/squid3" ]
@@ -177,7 +178,7 @@ then
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/userbackup.sh -O /bin/userbackup
 	chmod +x /bin/userbackup
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/openvpn-install.sh -O /bin/openvpn-install
-	chmod +x /bin/penvpn-install
+	chmod +x /bin/openvpn-install
 	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/master/scripts/extra/tcptweaker.sh -O /bin/tcptweaker
 	chmod +x /bin/tcptweaker
 	if [ ! -f "/etc/init.d/squid" ]
@@ -211,3 +212,4 @@ if [[ "$sshcompression" = 'n' ]]; then
 	grep -v "^Compression yes" /etc/ssh/sshd_config > /tmp/sshcp && mv /tmp/sshcp /etc/ssh/sshd_config
 fi
 exit 1
+rm -rf $HOME/vpsmanagersetup.sh
