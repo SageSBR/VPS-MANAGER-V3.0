@@ -89,7 +89,7 @@ then
 	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 	wget http://seannsvps.esy.es/vpsmanager/scripts/addhost.sh -O /bin/addhost
 	chmod +x /bin/addhost
-	wget https://www.dropbox.com/s/g1dkjyq2vf1b4id/alterarclaveusuario? -O /bin/alterarclaveusuario
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/scripts/master/alterarclaveusuario? -O /bin/alterarclaveusuario
 	chmod +x /bin/alterarclaveusuario
 	wget http://seannsvps.esy.es/vpsmanager/scripts/socks.sh -O /bin/socked
 	chmod +x /bin/socked
@@ -109,7 +109,7 @@ then
 	chmod +x /bin/sshlimiter
 	wget http://seannsvps.esy.es/vpsmanager/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://www.dropbox.com/s/rydz4gu8zfpr2v6/vps -O /bin/vps
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/scripts/master/vps -O /bin/vps
 	chmod +x /bin/vps
 	wget http://seannsvps.esy.es/vpsmanager/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
@@ -150,7 +150,7 @@ then
 	echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 	wget http://seannsvps.esy.es/vpsmanager/scripts/2/addhost.sh -O /bin/addhost
 	chmod +x /bin/addhost
-	wget https://www.dropbox.com/s/g1dkjyq2vf1b4id/alterarclaveusuario -O /bin/alterarclaveusuario
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/scripts/master/alterarclaveusuario -O /bin/alterarclaveusuario
 	chmod +x /bin/alterarclaveusuario
 	wget http://seannsvps.esy.es/vpsmanager/scripts/crearusuario2.sh -O /bin/crearusuario
 	chmod +x /bin/crearusuario
@@ -166,7 +166,7 @@ then
 	chmod +x /bin/sshlimiter
 	wget http://seannsvps.esy.es/vpsmanager/scripts/alterarlimite.sh -O /bin/alterarlimite
 	chmod +x /bin/alterarlimite
-	wget https://www.dropbox.com/s/rydz4gu8zfpr2v6/vps -O /bin/vps
+	wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/VPS-MANAGER-V3.0/scripts/master/vps -O /bin/vps
 	chmod +x /bin/vps
 	wget http://seannsvps.esy.es/vpsmanager/scripts/sshmonitor2.sh -O /bin/sshmonitor
 	chmod +x /bin/sshmonitor
