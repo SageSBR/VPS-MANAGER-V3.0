@@ -40,8 +40,8 @@ fi
 if [ "$1" = "" ]; then
 clear
 echo -e "\033[1;34m ===================================\033[0m"
-echo -e "\033[1;31m ∆ \033[1;37mOFICIAL VPS-MANAGER-SERVER\033[0m"
-echo -e "\033[1;31m √ \033[1;37mVPS-MANAGER V2.0\033[0m"
+echo -e "\033[1;31m ∆ \033[1;37mOFICIAL VPS-SERVER\033[0m"
+echo -e "\033[1;31m √ \033[1;37mVPS-MANAGER V3.0\033[0m"
 echo -e "\033[1;34m ===================================\033[0m"
 sso=$(cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/      //')
 echo -e "\033[1;31m ° \033[1;37m SU SISTEMA \033[1;31m$sso"
