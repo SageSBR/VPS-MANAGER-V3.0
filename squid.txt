@@ -13,7 +13,7 @@ http_port 3128
 http_port 8080
 http_port 8799
 
-visible_hostname vpsmanager
+visible_hostname mi1.4tunnel.ga
  
 forwarded_for off
 via off
