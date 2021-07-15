@@ -15,10 +15,11 @@ http_access allow localhost
 
 http_access deny all
 
-dns_nameservers 127.0.0.1
 dns_nameservers 8.8.8.8
+dns_nameservers 1.1.1.2
  
 http_port 3128
+icp_port 0
 
 cache_access_log /var/log/squid/access.log
 visible_hostname mi1.4tunnel.ga
@@ -31,6 +32,10 @@ forwarded_for off
 via off
 
 cache_mem 16 MB
+redirect_rewrites_host_header off
+memory_replacement_policy heap GDSF
+cache_replacement_policy heap LFUDA
+log_icp_queries off
 
 #Esta ACL diz ao squid para não armazenar em cache o conteúdo dos CGI's, pois
 #obviamente não é interessante por tratar-se de conteúdo dinâmico
@@ -56,15 +61,3 @@ ipcache_high 93
 shutdown_lifetime 2 second
 pipeline_prefetch on
 
-# politica de substituicao dos objetos quando se esgota o espaco destinado ao cache em disco.
-# lru: mantem os objetos referenciados recentemente.
-# heap GDSF: otimiza o "hit rate" por manter objetos pequenos e
-# e populares no cache, guardando assim um numero maior de objetos.
-# heap LFUDA: otimiza o "byte hit rate" por manter objetos populares
-# no cache sem levar em conta o tamanho. Se for utilizado este, o
-# maximum_object_size devera ser aumentado para otimizar o LFUDA.
-cache_replacement_policy heap LFUDA
-
-#define a politica de substituicao dos objetos em memoria
-#da mesma forma como o cache_replacement_policy
-memory_replacement_policy heap GDSF
