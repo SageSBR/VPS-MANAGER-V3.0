@@ -1,19 +1,71 @@
+acl all src 0.0.0.0/0.0.0.0
+acl localhost src 127.0.0.1/255.255.255.255
+acl SSL_ports port 443 563
+acl Safe_ports port 21 80 443 563 70 210 280 488 59 777 901 1025-65535
+acl purge method PURGE
+acl CONNECT method CONNECT 
 
-acl payload dstdomain -i "/etc/squid/payload.txt"
-
-http_access allow url1
-http_access allow url2
-http_access allow url3
-http_access allow payload
+http_access allow manager localhost
+http_access deny manager
+http_access allow purge localhost
+http_access deny purge
+http_access deny !Safe_ports
+http_access deny CONNECT !SSL_ports
+http_access allow localhost
 
 http_access deny all
- 
-http_port 80
-http_port 3128
-http_port 8080
-http_port 8799
 
+dns_nameservers 127.0.0.1
+dns_nameservers 8.8.8.8
+ 
+http_port 3128
+
+cache_access_log /var/log/squid/access.log
 visible_hostname mi1.4tunnel.ga
  
+refresh_pattern ^ftp: 15 20% 2280
+refresh_pattern ^gopher: 15 0% 2280
+refresh_pattern . 15 20% 2280
+
 forwarded_for off
 via off
+
+cache_mem 16 MB
+
+#Esta ACL diz ao squid para não armazenar em cache o conteúdo dos CGI's, pois
+#obviamente não é interessante por tratar-se de conteúdo dinâmico
+acl QUERY urlpath_regex cgi-bin \?
+no_cache deny all
+
+#esvazia o cache
+cache_swap_low 80
+cache_swap_high 85
+
+#tamanho maximo para gravacao no cache squid
+maximum_object_size 64 MB
+
+#tamanho minimo para gravacao no cache squid
+minimum_object_size 0 KB
+
+# Tamanho maximo dos objetos mantidos em memoria.
+maximum_object_size_in_memory 128 KB
+ipcache_size 3072
+ipcache_low 90
+ipcache_high 93
+
+shutdown_lifetime 2 second
+pipeline_prefetch on
+
+# politica de substituicao dos objetos quando se esgota o espaco destinado ao cache em disco.
+# lru: mantem os objetos referenciados recentemente.
+# heap GDSF: otimiza o "hit rate" por manter objetos pequenos e
+# e populares no cache, guardando assim um numero maior de objetos.
+# heap LFUDA: otimiza o "byte hit rate" por manter objetos populares
+# no cache sem levar em conta o tamanho. Se for utilizado este, o
+# maximum_object_size devera ser aumentado para otimizar o LFUDA.
+cache_replacement_policy heap LFUDA
+
+#define a politica de substituicao dos objetos em memoria
+#da mesma forma como o cache_replacement_policy
+memory_replacement_policy heap GDSF
+
