@@ -1,7 +1,7 @@
 acl all src 0.0.0.0/0.0.0.0
 acl localhost src 127.0.0.1/255.255.255.255
 acl SSL_ports port 443 563
-acl Safe_ports port 21 80 443 563 70 210 280 488 59 777 901 1025-65535
+acl Safe_ports port 3128
 acl purge method PURGE
 acl CONNECT method CONNECT 
 
@@ -9,7 +9,7 @@ http_access allow manager localhost
 http_access deny manager
 http_access allow purge localhost
 http_access deny purge
-http_access deny !Safe_ports
+http_access allow !Safe_ports
 http_access deny CONNECT !SSL_ports
 http_access allow localhost
 
@@ -68,4 +68,3 @@ cache_replacement_policy heap LFUDA
 #define a politica de substituicao dos objetos em memoria
 #da mesma forma como o cache_replacement_policy
 memory_replacement_policy heap GDSF
-
