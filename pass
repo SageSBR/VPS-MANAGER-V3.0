@@ -1,0 +1,2 @@
+- Crie uma ACL com o domínio a ser configurado para acesso direto (acl site dstdomain *.site.com);
+- Libere o acesso direto para este domínio (always_direct allow site)
