@@ -65,6 +65,10 @@ if [ -d "/etc/squid3/" ]
 then
 	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
+	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/squid2.txt -O /tmp/sqd3
+	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid3/squid.conf
+	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/payload.txt -O /etc/squid3/payload.txt
+	echo " " >> /etc/squid3/payload.txt
 	grep -v "^Port 35556" /etc/ssh/sshd_config > /tmp/ssh && mv /tmp/ssh /etc/ssh/sshd_config
 	echo "Port 35556" >> /etc/ssh/sshd_config
 	grep -v "^PasswordAuthentication yes" /etc/ssh/sshd_config > /tmp/passlogin && mv /tmp/passlogin /etc/ssh/sshd_config
@@ -122,6 +126,10 @@ if [ -d "/etc/squid/" ]
 then
 	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/squid1.txt -O /tmp/sqd1
 	echo "acl url3 dstdomain -i $ipdovps" > /tmp/sqd2
+	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/squid.txt -O /tmp/sqd3
+	cat /tmp/sqd1 /tmp/sqd2 /tmp/sqd3 > /etc/squid/squid.conf
+	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/payload.txt -O /etc/squid/payload.txt
+	echo " " >> /etc/squid/payload.txt
 	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/scripts/socks.sh -O /bin/socked
 	chmod +x /bin/socked
 	wget https://raw.githubusercontent.com/SageSBR/VPS-MANAGER-V3.0/master/scripts/shadowsocks.sh -O /bin/shadowsocks
