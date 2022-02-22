@@ -1,7 +1,20 @@
 acl all src 0.0.0.0/0.0.0.0
+acl manager proto cache_object
 acl localhost src 127.0.0.1/255.255.255.255
-acl SSL_ports port 443 563
-acl Safe_ports port 1080 443
+acl to_localhost dst 127.0.0.0/8
+acl SSL_ports port 443 563 10000 21 24001
+acl Safe_ports port 80 # http
+acl Safe_ports port 21 # ftp
+acl Safe_ports port 443 563 # https, snews
+acl Safe_ports port 70 # gopher
+acl Safe_ports port 210 # wais
+acl Safe_ports port 1025-65535 # unregistered ports
+acl Safe_ports port 280 # http-mgmt
+acl Safe_ports port 488 # gss-http
+acl Safe_ports port 591 # filemaker
+acl Safe_ports port 777 # multiling http
+acl Safe_ports port 24001 # ftp dpi
+acl CONNECT method CONNECT
 acl purge method PURGE
 acl CONNECT method CONNECT 
 
@@ -15,9 +28,9 @@ http_access allow localhost
 
 http_access deny all
 
-dns_nameservers 129.250.35.250
- 
-http_port 443
+dns_nameservers 129.250.35.250 129.250.35.251
+
+http_port 3128
 icp_port 0
 
 cache_access_log /var/log/squid/access.log
@@ -59,4 +72,3 @@ ipcache_high 93
 
 shutdown_lifetime 2 second
 pipeline_prefetch on
-
